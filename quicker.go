@@ -28,7 +28,12 @@ func main() {
 	flag.Parse()
 
 	if *msg == "" && *id == "" {
-		fmt.Println("[Error] No arguments.")
+		fmt.Println("[Error] No argument.")
+		os.Exit(1)
+	}
+
+	if *msg != "" && *id != "" {
+		fmt.Println("[Error] To many arguments.")
 		os.Exit(1)
 	}
 
