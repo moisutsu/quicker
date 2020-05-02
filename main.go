@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
+	"bytes"
 )
 
 type messageJSON struct {
@@ -53,5 +54,26 @@ func main() {
 			os.Exit(1)
 		}
 		fmt.Println(message.Message)
+	} else {
+		m := new(messageJSON)
+		m.Message = *msg
+		message, _ := json.Marshal(m)
+		resp, err := http.Post(baseURL, "application/json", bytes.NewBuffer(message))
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		defer resp.Body.Close()
+		b, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		var id idJSON
+		if err := json.Unmarshal(b, &id); err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+		fmt.Println(id.ID)
 	}
 }
