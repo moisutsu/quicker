@@ -1,14 +1,14 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
-	"os"
-	"net/url"
-	"net/http"
 	"io/ioutil"
-	"encoding/json"
-	"bytes"
+	"net/http"
+	"net/url"
+	"os"
 )
 
 type messageJSON struct {
@@ -22,7 +22,7 @@ type idJSON struct {
 func main() {
 	var (
 		msg = flag.String("m", "", "message")
-		id = flag.String("i", "", "id")
+		id  = flag.String("i", "", "id")
 	)
 
 	flag.Parse()
