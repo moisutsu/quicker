@@ -1,5 +1,7 @@
 # Quicker
 
+![icon](https://user-images.githubusercontent.com/56575610/80867069-1a8f3a80-8ccd-11ea-9da8-d546d4d8c8f6.png)
+
 短文送信サイト「Quicker」のCUIアプリケーション
 
 アカウント登録などを一切せずに簡単にCUI同士で文字列を送ることができます.
