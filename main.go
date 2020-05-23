@@ -37,7 +37,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	baseURL := "http://quicker.ml/"
+	baseURL := "https://quicker.ml/"
 
 	if *msg == "" {
 		values := url.Values{}
