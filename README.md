@@ -9,11 +9,10 @@
 ## インストール方法
 
 ```bash
-$ git clone https://github.com/moisutsu/quicker
-$ cd quicker
-$ go build .
+$ go get github.com/moisutsu/quicker
 ```
-その後、生成されたバイナリをパスが通っているディレクトリに置くことで、`quicker`で実行することができます。
+
+`$GOPATH/bin`にパスが通すと、`quicker`で実行することができます。`$GOPATH`を特に設定していなければ、`$GOPATH=$HOME/go`になります。
 
 ## 使い方
 
